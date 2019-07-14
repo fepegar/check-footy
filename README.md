@@ -6,14 +6,21 @@ if there's a new football game available at King's College London.
 ```shell
 $ conda create -n "footy" python
 $ conda activate "footy"
-$ pip install -r "requirements.txt"
+(footy) $ pip install -r "requirements.txt"
 ```
 
 ## Usage
-Add this job to `crontab`:
+
+```shell
+$ export SIMPLEPUSH="HuxgBB"
+$ conda activate "footy"
+(footy) $ python check_footy.py
+```
+
+Where `HuxgBB` should be replaced by your [Simplepush](https://simplepush.io/) secret key (Simplepush has a free trial period of 7 days).
+
+To run it every 5 minutes, add this job to `crontab`:
 
 ```shell
 */5 * * * * export SIMPLEPUSH="HuxgBB" && $HOME/miniconda3/envs/footy/bin/python $HOME/git/check-footy/check_footy.py
 ```
-
-Where `HuxgBB` should be replaced by your [Simplepush](https://simplepush.io/) key (Simplepush has a free trial period of 7 days).
