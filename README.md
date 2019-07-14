@@ -13,7 +13,7 @@ $ pip install -r "requirements.txt"
 Add this job to `crontab`:
 
 ```shell
-*/5 * * * * */5 * * * * export SIMPLEPUSH="HuxgBB" && $HOME/miniconda3/envs/footy/bin/python $HOME/git/check-footy/check_footy.py
+*/5 * * * * export SIMPLEPUSH="HuxgBB" && $HOME/miniconda3/envs/footy/bin/python $HOME/git/check-footy/check_footy.py
 ```
 
-Where `HuxgBB` should be replaced by your [Simplepush](https://simplepush.io/) key.
+Where `HuxgBB` should be replaced by your [Simplepush](https://simplepush.io/) key (Simplepush has a free trial period of 7 days).
