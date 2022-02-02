@@ -30,7 +30,10 @@ class Class:
     def __init__(self, tag: Tag):
         self.tag = tag
         self.title = tag.h3.text
-        self.sport, self.location = self.title.split(' @ ')
+        try:
+            self.sport, self.location = self.title.split(' @ ')
+        except ValueError as e:
+            self.sport = self.title
 
     def __repr__(self) -> str:
         string = f'{self.title}'
@@ -126,7 +129,7 @@ class Web:
 
     def notify(self, dry_run: bool = False):
         if not self.games:
-            logging.warning(f'No games found now: {datetime.now()}')
+            logging.warning(f'No games found: {datetime.now()}')
             return
         for game in self.games:
             game.notify(dry_run=dry_run)
